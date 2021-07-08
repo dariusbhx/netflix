@@ -21,6 +21,8 @@ const Row = ({title,fetchURL,isLargeRow = false}) => {
             
             <div className="row__posters">
             {movies.map((movie) => (
+                (isLargeRow && movie.poster_path)||
+                (!isLargeRow && movie.backdrop_path)) &&(
                 <img src = {`${base_url}${
                     isLargeRow ? movie.poster_path : movie.backdrop_path
                 }`} 
